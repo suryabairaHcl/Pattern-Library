@@ -5,6 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Style Guide</title>
     <link rel="stylesheet" type="text/css" href="./css/mainStyles.css">
+     <!-- <link rel="stylesheet" type="text/css" href="./css/reset.css"> -->
+       <link rel="stylesheet" href="../css/nucleo-outline.css">  
     <link rel="stylesheet" type="text/css" href="./css/styleGuide-lib.css">
     <script type="text/javascript" src="./js/jquery-3.2.1.min.js"></script>
     <script type="text/javascript" src="./js/helperScript.js"></script>
@@ -43,16 +45,14 @@
             <li><a href="./search-6.html" >Search Continued Part 3</a></li>
             <li><a href="./search-7.html" >Search Continued Part 4</a></li>
             <li><a href="./filters.html">filters</a></li>
-            <li><a href="./vertical-nav.html" class='active-nav'>Vertical Navigation</a></li>
+            <li><a href="./vertical-nav.html">Vertical Navigation</a></li>
             <li><a href="./message1.html"  >Building Blocks</a></li>
             <li><a href="./message-2.html" >Building Blocks Part 1</a></li>
             <li><a href="./message-3.html" >Building Blocks Part 2</a></li>
             <li><a href="./message-4.html" >Building Blocks Part 3</a></li>
-            <li><a href="./pagination-1.html" >Pagination</a></li>
+            <li><a href="./pagination-1.html" class='active-nav'>Pagination</a></li>
             <li><a href="./page-break.html" >Pagination</a></li>
             <li><a href="./list-items.html" >List Item</a></li>
-
-
         </ul>
     </nav>
 
@@ -63,7 +63,7 @@
             <div class="header-title">
                 <span class="sub-title">COMPONENT</span>
                 <span class="main-title">
-					<strong>TABS</strong>
+					<strong>PAGINATION</strong>
 				</span>
                 <span class="decor-line"></span>
             </div>
@@ -94,15 +94,17 @@
                     <div class="interactive-view-wrapper">
                         <div class="interactive-view-container" data-id="id-set-1">
                             <section class="sg-demo-wrapper">
-                            	<div class="sg-tabs-container">
-                                    <ul class="vertical-nav">
-                                        <li><a href="#" class="active-nav">Project Handover</a></li>
-                                        <li><a href="#">Changes</a></li>
-                                        <li><a href="#">Loan Transactions</a></li>
-                                        <li><a href="#">Equity Transactions</a></li>
-                                        <li><a href="#">Supervision Process</a></li>
-                                    </ul>
-                            	</div>
+                            	<h2>Regular Pagination</h2>
+                                <div class="pagination">
+                                <a href="#">&laquo;</a>
+                                <a href="#">1</a>
+                                <a href="#">2</a>
+                                <a href="#">3</a>
+                                <a href="#">4</a>
+                                <a href="#">5</a>
+                                <a href="#">6</a>
+                                <a href="#">&raquo;</a>
+                                </div>
                             </section>
                         </div>
                     </div>

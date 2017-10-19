@@ -169,6 +169,7 @@ article,aside,details,figcaption,figure,footer,header,hgroup,hr,menu,nav,section
     }
 
 	.sg-demo-wrapper{
+	    min-height: 258px;
     	background-color: #fff;
     	min-width: 365px;
     	margin:20px auto;

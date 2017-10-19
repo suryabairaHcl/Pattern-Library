@@ -9,19 +9,28 @@
     <script type="text/javascript" src="./js/jquery-3.2.1.min.js"></script>
     <script type="text/javascript" src="./js/helperScript.js"></script>
     <script type="text/javascript">
-		$(document).ready(function(){
-			$(".gs-tabs-navigation > .sg-tab-menu-item").on("click",function(evt){
-				// remove any existing active elements
-				$(this).closest(".sg-tabs-container")
-					   .find(".active-tab-item")
-					   .removeClass("active-tab-item");
-				// add active class to clicked element
-				$(this).addClass("active-tab-item");
-				$(this).closest(".sg-tabs-container")
-					   .find(".sg-tabs-body .sg-tab-content[data-item='"+($(this).data("item"))+"']")
-					   .addClass("active-tab-item");
-			});
-		});
+                $(document).ready(function() {
+            $('.toast-triggers').on('click', function(e) {
+                var $toast = $('.toast-template[data-template=' + $(e.target).data('templateKey') + '] .toast').clone();
+                var timer;
+
+                if ($toast.hasClass("urgent")) {
+                    $("#toast-container .urgent").append($toast);
+                }
+                else {
+                    $("#toast-container").append($toast);
+                    timer = setTimeout(function(){
+                    $toast.fadeOut(300, function() { $(this).remove(); });
+                    }, 3000);
+                }
+
+                $toast.on('click', function(){
+                    $toast.fadeOut(300, function() { $(this).remove(); });
+                clearTimeout(timer);
+                })
+            });
+            });
+
 	</script>
 </head>
 
@@ -33,7 +42,7 @@
             <li><a href="./buttons.html">Buttons</a></li>
             <li><a href="./tabs.html" >Card Navigation</a></li>
             <li><a href="./selection.html">Selection Controls</a></li>
-            <li><a href="./cards.html">Card Navigation</a></li>
+            <li><a href="./cards.html">Task Navigation</a></li>
             <li><a href="./datalist.html">Data List</a></li>
             <li><a href="./search.html">Search</a></li>
             <li><a href="./search-2.html">Search Results</a></li>
@@ -48,6 +57,9 @@
             <li><a href="./message-2.html" >Building Blocks Part 1</a></li>
             <li><a href="./message-3.html" >Building Blocks Part 2</a></li>
             <li><a href="./message-4.html" >Building Blocks Part 3</a></li>
+            <li><a href="./pagination-1.html" >Pagination</a></li>
+            <li><a href="./page-break.html" >Pagination</a></li>
+            <li><a href="./list-items.html" >List Item</a></li>
 
         </ul>
     </nav>
@@ -59,7 +71,7 @@
             <div class="header-title">
                 <span class="sub-title">COMPONENT</span>
                 <span class="main-title">
-					<strong>TABS</strong>
+					<strong>SYSTEM TO USER MESSAGING</strong>
 				</span>
                 <span class="decor-line"></span>
             </div>
@@ -90,17 +102,40 @@
                     <div class="interactive-view-wrapper">
                         <div class="interactive-view-container" data-id="id-set-1">
                             <section class="sg-demo-wrapper">
-                            	<div class="sg-tabs-container">
-                            	<div class="success-message">
-                                             <!-- <div class="container"> -->
-                                                <div class="round">
-                                                    <input type="checkbox" id="checkbox" />
-                                                    <label for="checkbox"></label>
-                                                </div>
-                                            <!-- </div> -->
-                                  <span class="sucss-msg">success message</span>
-                                </div>
-                            	</div>
+                            	<div id="toast-container">
+                                    <div class="urgent"></div>
+                                    </div>
+
+                                    <div class="toast-triggers">
+                                    <button data-template-key="bold">Bold toast</button>
+                                    <button data-template-key="text">Text toast</button>
+                                    <button data-template-key="urgent">Text toast(urgent)</button>
+                                    </div>
+
+                                    <div class="toast-template" data-template="bold" style="display:none">
+                                        <div class="toast bold-toast">Document Saved</div>
+                                    </div>
+
+                                    <div class="toast-template" data-template="text" style="display:none">
+                                    <div class="toast text-toast">                        
+                                                    <i class="nc-icon-glyph design_todo"></i> 
+                                            <div class="text-head">
+                                                Vensa dias menako
+                                            </div>             
+                                            Lorem ipsum dolor sit amet, consectetur adipiscing…
+
+                                        </div>
+                                    </div>
+
+                                    <div class="toast-template" data-template="urgent" style="display:none">
+                                    <div class="toast text-toast urgent">
+                                                    <i class="nc-icon-glyph design_todo"></i> 
+                                            <div class="text-head">
+                                                Lorem ipsum dolor
+                                            </div>             
+                                            Lorem ipsum dolor sit amet, consectetur adipiscing…
+                                            </div>
+                                    </div>
                             </section>
                         </div>
                     </div>
